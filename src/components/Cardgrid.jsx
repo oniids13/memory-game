@@ -18,7 +18,7 @@ export default function Cardgrid({pokemonList, setPokemonList, clicked, setClick
                     pokemonList={pokemonList}
                     setPokemonList={setPokemonList}
                     clicked={clicked}
-                    setCliked={setClicked}
+                    setClicked={setClicked}
                     score={score}
                     setScore={setScore}
                     setBestScore={setBestScore}

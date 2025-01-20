@@ -1,6 +1,6 @@
 
 
-export default function Card({pokemonImg, pokemonName, pokemonList, setPokemonList, clicked, setCliked, score, setScore, setBestScore, setIsGameOver}) {
+export default function Card({pokemonImg, pokemonName, pokemonList, setPokemonList, clicked, setClicked, score, setScore, setBestScore, setIsGameOver}) {
 
     function shuffleCard(array) {
         array = [...array]
@@ -20,11 +20,11 @@ export default function Card({pokemonImg, pokemonName, pokemonList, setPokemonLi
     function handleClick() {
         if(!clicked.includes(pokemonName)) {
             setScore((score) => score + 1)
-            setCliked((clicked) => [...clicked, pokemonName])
+            setClicked((clicked) => [...clicked, pokemonName])
             setBestScore((bestscore) => (score >= bestscore ? score + 1 : bestscore))
         } else {
             setIsGameOver(true)
-            setCliked([])
+            setClicked([])
             
         }
     }

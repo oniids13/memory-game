@@ -53,7 +53,7 @@ export default function Body() {
 
                 <div className={score===20 ? "high-score" : "high-score-hide"}>
                     <p>Good Job! You got them all!</p>
-                    <button onClick={startAgain}>Play Again!</button>
+                    <button onClick={() => startAgain()}>Play Again!</button>
                 </div>
             </div>
     

@@ -67,6 +67,7 @@ footer {
 .card:hover {
   transform: scale(0.9);
   border: red 2px solid;
+  cursor: pointer;
 }
 
 .card-detail{
