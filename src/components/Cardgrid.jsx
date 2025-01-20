@@ -3,7 +3,7 @@ import Card from "./Card";
 
 
 
-export default function Cardgrid({pokemonList, setPokemonList, clicked, setClicked, score, setScore, setBestScore}) {
+export default function Cardgrid({pokemonList, setPokemonList, clicked, setClicked, score, setScore, setBestScore, isStart, isGameOver, setIsGameOver}) {
    
     
     const [cards, setCards] = useState([])
@@ -22,6 +22,7 @@ export default function Cardgrid({pokemonList, setPokemonList, clicked, setClick
                     score={score}
                     setScore={setScore}
                     setBestScore={setBestScore}
+                    setIsGameOver={setIsGameOver}
                 />
             ))
         )
@@ -29,7 +30,7 @@ export default function Cardgrid({pokemonList, setPokemonList, clicked, setClick
     }, [pokemonList])
 
         return(
-            <div className="card-grid">
+            <div className={!isStart || isGameOver ? "card-grid-hidden" : "card-grid"}>
                 {cards}
             </div>
         )

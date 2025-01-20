@@ -1,4 +1,6 @@
-export default function Card({pokemonImg, pokemonName, pokemonList, setPokemonList, clicked, setCliked, score, setScore, setBestScore}) {
+
+
+export default function Card({pokemonImg, pokemonName, pokemonList, setPokemonList, clicked, setCliked, score, setScore, setBestScore, setIsGameOver}) {
 
     function shuffleCard(array) {
         array = [...array]
@@ -21,12 +23,16 @@ export default function Card({pokemonImg, pokemonName, pokemonList, setPokemonLi
             setCliked((clicked) => [...clicked, pokemonName])
             setBestScore((bestscore) => (score >= bestscore ? score + 1 : bestscore))
         } else {
-            setScore(0)
+            setIsGameOver(true)
             setCliked([])
+            
         }
     }
 
+    
+
     return (
+    
         <div className="card"
             onClick={() => {
                 handleClick()
@@ -38,9 +44,12 @@ export default function Card({pokemonImg, pokemonName, pokemonList, setPokemonLi
             <div className="card-pic">
                 <img src={pokemonImg} alt={`Pokemon Name: ${pokemonName}`} />
             </div>
-            <div className="detail">
+            <div className="card-detail">
                 <h3>{pokemonName}</h3>
             </div>
         </div>
+
     )
 }
+
+
